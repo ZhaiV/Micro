@@ -1,0 +1,84 @@
+<html>
+<head>SingUp</head>
+
+<body>
+  <form method = "POST" action="/blog/singup/" id="regform">
+      <label>Email</label>{{ regform.email }} <br/>
+      <label>NickName</label>{{ regform.nickname }} <br/>
+      <label>Password</label>{{ regform.passwd }} <br/>
+      <label>Label</label>{{ regform.label}} <br/>
+      <label>ConfirmPass</label>{{ regform.passwd2 }} <br/>
+      <label>Job</label>{{ regform.job }} <br/>
+      <label>Birthday</label>{{ regform.birthday }} <br/>
+      <label>Address</label>{{ regform.address }} <br/>
+      <input type="submit" value =" SingUp" />
+  </form>
+
+   
+   
+  <script>
+   $().ready(function(){
+       $("#regform").validate({
+	   rules:{
+	       email:{
+		   required = true,
+		   email = true
+	       },
+	       nickname:{
+		   required = true,
+		   minlength = 3,
+		   maxlength = 16
+	       },
+	       passwd:{
+		   required = true,
+		   minlength = 6,
+		   maxlength = 16
+	       },
+	       passwd2:{
+		   required = true,
+		   minlenth = 6,
+		   maxlength =16,
+		   equalTo = "#passwd"
+	       },
+	       birthday:{
+		   date = true,
+	       },
+	       address:{
+		   maxlength = 60,
+	       },
+	       job:{
+		   minlength = 10,
+		   maxlength = 50,
+	       },
+	       
+	       
+	       
+	   },
+	   message:{
+	       email:{ 
+                   required:"not empty",
+	       },
+	       nickname:{
+		   required:"input your nickname",
+		   minlength:"Too short",
+		   maxlength:"Too long",
+	       },
+	       address:{
+		   maxlength:"too long",
+	       },
+	       
+	       passwd:{
+		   minlength:"Too short",
+		   maxlenth:"Too long",
+	       },
+	       passwd2:{
+		   eaqualTo:"input the same passwd",
+	       }
+	       
+	   }
+       })
+   })
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+
+<head>Index</head>
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script> 
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js " ></script>
+<body>
+<a href="/blog/register/"><button>SingUp</button></a>
+<a><button>SingIn</button></a>
+<form action="/blog/auth/" method="POST" id="loginform">
+
+<label>Email</label>{{loginform.email}}
+<label>Passwd</label>{{loginform.passwd}}
+<input type="submit" value="login"/>
+</form>
+<script>
+ $(document).ready(function(){
+    $("#loginform").validate({
+
+       rules:{
+        email:{
+                required:true,
+                email: true,
+              },
+        passwd:{
+                 required:true
+               }
+
+       },
+	messages:{
+	 email:{
+	     required:'please in put your email',
+	     email:'input correct email',
+	 },
+	  passwd:{
+	      required:'input your passwd'
+	      
+	  }
+	}
+})
+})
+</script>
+</body>
+</html>

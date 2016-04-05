@@ -1,0 +1,42 @@
+<html>
+
+<head>Index</head>
+<script src=static/jqeury-1.10.0.js></script>
+<script src=static/jqeury.validate-1.13.1.js></script>
+<body>
+<a href="/blog/register/"><button>SingUp</button></a>
+<a><button>SingIn</button></a>
+<form action="/blog/auth/" method="POST" id="loginform">
+
+<label>Email</label>{{loginform.email}}
+<label>Passwd</label>{{loginform.passwd}}
+<input type="submit" value="login"/>
+</form>
+<script>
+$().ready(function(){
+    $("#loginform").validate({
+       rules:{
+        email:{
+                required=true,
+                email = true,
+              },
+        passwd:{
+                 required = true
+               }
+
+       },
+	message:{
+	 email:{
+	     required = 'please in put your email',
+	     email = 'input correct email',
+	 },
+	  passwd:{
+	      required = 'input your passwd'
+	      
+	  }
+	}
+})
+})
+</script>
+</body>
+</html>

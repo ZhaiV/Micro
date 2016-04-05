@@ -1,0 +1,22 @@
+from django.test import TestCase
+from tools import setattr_with_obj
+from forms  import RegisterForm
+from models import User
+# Create your tests here.
+class Form_Model(TestCase):
+    def tee(self):
+        f  = User()
+        u  = object()
+        u.passwd='123'
+        u.email = '2132@ww.com'
+        u.job = 'faf'
+        u.birthday='1990-12-12'
+        u.label='wuliao'
+        u.nickname = 'lee'
+        u.address = 'HeNan'
+        setattr_with_obj(f,RegisterForm,u)
+if __name__ =='__main__':
+   t = Form_Model()
+
+   t.tee()
+   print 'done'

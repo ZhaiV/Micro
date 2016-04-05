@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+<div style="height: 100px"></div>
+<div class="container col-md-3 col-md-offset-7" style="background-color: whitesmoke;border-radius: 5px;border: 1px lightgray solid">
+
+<form class="form-horizontal" style="margin: 45px">
+    <div class="form-group ">
+
+    <label for="name"><span class="glyphicon glyphicon-user"></span></label><input id="name" class="form-control" type="email" name="name" placeholder="输入邮箱名"/>
+
+        <div style="height: 30px;"></div>
+    <label for="passwd"><span class="glyphicon glyphicon-lock" ></span></label><input type="password" id="passwd" class="form-control" name="paasswd"/>
+
+    </div>
+    <div style="height: 30px;"></div>
+
+    <div class="form-group">
+        <button class="btn btn-primary col-md-12 ">登录</button>
+    </div>
+</form>
+</div>
+
+</body>
+</html>

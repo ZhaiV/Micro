@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+    <script src="/static/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.js"></script>
+            
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class=" container col-md-10 col-lg-offset-1">
+    <div class="navbar-header">
+        <a class="navbar-brand">
+            <img src="/static/img/header.ico" style="margin-top: -14px">
+        </a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li class="active"><a>Home</a></li>
+        <li><a>Settings</a></li>
+        <li><a>Hots</a></li>
+        <li><a>Home</a></li>
+
+    </ul>
+    <div class="navbar-form navbar-right">
+	{% if username %}
+	<a href ="/blog/setting/" style="margin-right">{{ username}}</a>
+	{% else %}
+        <a href="/blog/index" style="margin-right: 8px">登录</a>
+        <a href="/blog/register" style="margin-right: 8px">注册</a>
+	{% endif %}
+        <input type="text" class="form-control">
+        <button class="btn btn-primary">搜索</button>
+    </div>
+    </div>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <script src="/static/jquery.min.js"></script> 
+    <script src="/static/jquery.validate.min.js " ></script>
+</head>
+<body>
+<div style="height: 100px"></div>
+<div class="container col-md-3 col-md-offset-7" style="background-color: whitesmoke;border-radius: 5px;border: 1px lightgray solid">
+
+<form  id="loginform" class="form-horizontal" style="margin: 45px" action="/blog/auth/" method="POST">
+    <div class="form-group ">
+
+    <label for="emailname"><span class="glyphicon glyphicon-user"></span></label><input id="emailname" class="form-control" type="email" name="email" placeholder="输入邮箱名"/>
+
+        <div style="height: 30px;"></div>
+    <label for="passwd"><span class="glyphicon glyphicon-lock" ></span></label><input type="password" id="passwd" class="form-control" name="passwd"/>
+
+    </div>
+    <div style="height: 30px;"></div>
+
+    <div class="form-group">
+        <button class="btn btn-primary col-md-12 " type="submit">登录</button>
+    </div>
+</form>
+</div>
+<script>
+ $(document).ready(function(){
+     $("#loginform").validate({
+	 rules:{
+	     email:{
+		 email:true,
+		 required:true,
+		 maxlength:30
+	     },
+	     passwd:{
+		 required:true,
+
+	     }
+	 },
+	 messages:{
+	     email:{
+		 email:'input right email',
+		 required:'input your email',
+		 maxlength:'too long'
+	     },
+	     passwd:{
+		 required:'passwd should not empty',
+	     }
+	 }
+})
+})
+</script>
+</body>
+</html>
