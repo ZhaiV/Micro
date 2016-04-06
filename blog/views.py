@@ -56,4 +56,3 @@ def welcome(request):
     return render_to_response('welcome.html',{'username':username})
 def addblog(request):
     pass
-2
