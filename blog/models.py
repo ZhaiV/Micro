@@ -10,7 +10,7 @@ class User(models.Model):
     label = models.CharField(max_length=40)
     job = models.CharField(max_length=13)
     address = models.CharField(max_length=40)
-    pothon = models.ImageField(upload_to = 'uploadl_img/', default = 'upload_img/defalt.jpg')
+    headimg = models.ImageField(upload_to = 'uploadl_img/', default = 'upload_img/defalt.jpg')
     birthday = models.DateField(default="1992-12-12")
     def __unicode__(self):
         return self.email+self.passwd
@@ -28,7 +28,7 @@ class Comment(models.Model):
     pass
 
 class Category(models.Model):
-    name = models.CharField(max_length = 32, unique = true)
+    name = models.CharField(max_length = 32, unique = True)
 admin.site.register(Category)    
 class Follows(models.Model):
     pass
